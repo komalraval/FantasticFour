@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InventoryManagementDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="InventoryManagementDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="InventoryItemtbls" EntityType="InventoryManagementDBModel.InventoryItemtbl" />
+    <EntitySet Name="InventoryLists" EntityType="InventoryManagementDBModel.InventoryList" />
+    <EntitySet Name="Logins" EntityType="InventoryManagementDBModel.Login" />
+    <EntitySet Name="Personnels" EntityType="InventoryManagementDBModel.Personnel" />
+    <EntitySet Name="UsedInventoryDetailsTbls" EntityType="InventoryManagementDBModel.UsedInventoryDetailsTbl" />
+    <EntitySet Name="User_Details" EntityType="InventoryManagementDBModel.User_Details" />
+    <AssociationSet Name="FK_InventoryItemtbl_InventoryList" Association="InventoryManagementDBModel.FK_InventoryItemtbl_InventoryList">
+      <End Role="InventoryList" EntitySet="InventoryLists" />
+      <End Role="InventoryItemtbl" EntitySet="InventoryItemtbls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personnel_User_Details" Association="InventoryManagementDBModel.FK_Personnel_User_Details">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="Personnel" EntitySet="Personnels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsedInventoryDetailsTbl_User_Details" Association="InventoryManagementDBModel.FK_UsedInventoryDetailsTbl_User_Details">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="UsedInventoryDetailsTbl" EntitySet="UsedInventoryDetailsTbls" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="InventoryItemtbl">
+    <Key>
+      <PropertyRef Name="InventoryItemId" />
+    </Key>
+    <Property Name="InventoryListId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBuying" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UnitType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InventoryItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="InventoryList" Relationship="InventoryManagementDBModel.FK_InventoryItemtbl_InventoryList" FromRole="InventoryItemtbl" ToRole="InventoryList" />
+  </EntityType>
+  <EntityType Name="InventoryList">
+    <Key>
+      <PropertyRef Name="InventoryListId" />
+    </Key>
+    <Property Name="InventoryListId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalCost" Type="Int32" />
+    <Property Name="TotalItems" Type="Int32" />
+    <Property Name="Percentage" Type="Int32" />
+    <Property Name="UnitType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="InventoryItemtbls" Relationship="InventoryManagementDBModel.FK_InventoryItemtbl_InventoryList" FromRole="InventoryList" ToRole="InventoryItemtbl" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_ID_Ref" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Personnel">
+    <Key>
+      <PropertyRef Name="Personnel_ID" />
+    </Key>
+    <Property Name="Personnel_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_ID" Type="Int32" />
+    <Property Name="Absent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="present" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User_Details" Relationship="InventoryManagementDBModel.FK_Personnel_User_Details" FromRole="Personnel" ToRole="User_Details" />
+  </EntityType>
+  <EntityType Name="UsedInventoryDetailsTbl">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="InventoryItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AmountOfUsed" Type="Int32" />
+    <Property Name="UnitType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ActivityType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User_Details" Relationship="InventoryManagementDBModel.FK_UsedInventoryDetailsTbl_User_Details" FromRole="UsedInventoryDetailsTbl" ToRole="User_Details" />
+  </EntityType>
+  <EntityType Name="User_Details">
+    <Key>
+      <PropertyRef Name="User_ID_Ref" />
+    </Key>
+    <Property Name="User_ID_Ref" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Personnels" Relationship="InventoryManagementDBModel.FK_Personnel_User_Details" FromRole="User_Details" ToRole="Personnel" />
+    <NavigationProperty Name="UsedInventoryDetailsTbl" Relationship="InventoryManagementDBModel.FK_UsedInventoryDetailsTbl_User_Details" FromRole="User_Details" ToRole="UsedInventoryDetailsTbl" />
+  </EntityType>
+  <Association Name="FK_InventoryItemtbl_InventoryList">
+    <End Type="InventoryManagementDBModel.InventoryList" Role="InventoryList" Multiplicity="1" />
+    <End Type="InventoryManagementDBModel.InventoryItemtbl" Role="InventoryItemtbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryList">
+        <PropertyRef Name="InventoryListId" />
+      </Principal>
+      <Dependent Role="InventoryItemtbl">
+        <PropertyRef Name="InventoryListId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personnel_User_Details">
+    <End Type="InventoryManagementDBModel.User_Details" Role="User_Details" Multiplicity="0..1" />
+    <End Type="InventoryManagementDBModel.Personnel" Role="Personnel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="User_ID_Ref" />
+      </Principal>
+      <Dependent Role="Personnel">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsedInventoryDetailsTbl_User_Details">
+    <End Type="InventoryManagementDBModel.User_Details" Role="User_Details" Multiplicity="1" />
+    <End Type="InventoryManagementDBModel.UsedInventoryDetailsTbl" Role="UsedInventoryDetailsTbl" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="User_ID_Ref" />
+      </Principal>
+      <Dependent Role="UsedInventoryDetailsTbl">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

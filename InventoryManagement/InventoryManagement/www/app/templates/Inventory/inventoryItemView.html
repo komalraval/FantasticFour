@@ -1,0 +1,94 @@
+﻿<ion-nav-bar class="bar-dark">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-android-arrow-back" ng-click="GoBack('inventory')"></button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+<header class="bar bar-header bar-dark">
+    <h1 class="title">Inventory Management </h1>
+</header>
+
+
+<!--<ion-nav-view></ion-nav-view>-->
+<ion-view ng-init="ShowInventoryItems()">
+    <ion-content padding="true" style="overflow:auto">
+        <ion-item>
+            <input type="text" ng-model="itemName" class="col" style="font-weight:bold;vertical-align:bottom;padding-bottom:0px!important;margin-bottom:0px !important;margin-top:25px;text-align:center" />
+        </ion-item>
+        <ion-list can-swipe="true" show-delete="false" swipe-direction="both">
+            <ion-item ng-repeat="item in Items" ng-click="GoToInventoryItem(item)">
+                <div style="float:left" class="col-75">
+                    <div class="row">
+                        <label>Price Per Piece: </label>
+                        <label>{{item.Price}}</label>
+                    </div>
+                    <div class="row">
+                        <label>Quantity : </label>
+                        <label>{{item.Quantity}}</label>
+                    </div>
+                    <div class="row">
+                        <label>Date Of Buying : </label>
+                        <label>{{item.DateOfBuying}}</label>
+                    </div>
+
+                </div>
+                <div style="float:right;vertical-align:middle" class="col-25">
+                    <button ng-click="DeleteInventoryItemDetails(item)"> Delete</button>
+                    <!--<button can-swipe="true" on-swipe-left="onSwipeLeft(item)"> Delete </button>-->
+                    <!--<ion-delete-button side="left" class="ion-minus-circled"></ion-delete-button>-->
+                    <!--<ion-option-button side="left" gesture-type="swipeleft" on-swipe-left="swipeLeft()" class="button-assertive icon ion-trash-a"></ion-option-button>-->
+                </div>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+
+</ion-view>
+
+
+<drawer side="rightTop" style="height:160px;margin-top : 100px;">
+
+    <ion-view>
+
+        <ion-content>
+            <ion-item class="bar bar-header bar-dark">
+                <h1 class="title">Search Criteria </h1>
+
+                <button menu-toggle="right" id="buttonCloseSearch" class="button-icon icon ion-android-cancel" style="float:right;margin-top:-12px !important;position:absolute;margin-left:-15px!important;font-size:10px !important;color:white" ng-click="toggleDrawer()"></button>
+
+            </ion-item>
+
+            <ion-item>
+                <label>Search : </label>
+                <input type="text" style="float:right;border:2px solid black" ng-model="SearchByNameItemView" id="SearchByNameItemView" ng-change="SearchDataInItemView()">
+            </ion-item>
+
+
+        </ion-content>
+    </ion-view>
+</drawer>
+
+
+<ion-footer-bar class="bar-dark">
+
+
+    <button class="button" style="float:left" ng-click="AddInventoryItem()"> Add </button>
+
+
+    <!--<div class="buttons" ng-click="doSomething()" style="width:25%">
+        <button class="button" >Edit</button>
+    </div>
+
+    <div class="buttons" ng-click="doSomething()" style="width:25%">
+        <button class="button"> Delete </button>
+    </div>-->
+
+
+    <button class="button" ng-click="toggleDrawer()" style="float : right !important ">
+        <img src="../../../images/search1.png" style="width:30px;height:25px;" />
+    </button>
+
+
+</ion-footer-bar>
+
+

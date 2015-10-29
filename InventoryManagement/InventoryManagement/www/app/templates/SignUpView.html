@@ -1,0 +1,301 @@
+﻿<!--<style>
+
+    .ScrollStyle {
+        max-height: 500px;
+        overflow-y: auto;
+        overflow: auto;
+    }
+
+    #text {
+        float: left;
+        width: 100px;
+    }
+
+
+    select {
+        width: 200px;
+        height: 29px;
+        border-radius: 3px;
+        border: 1px solid #CCC;
+        font-weight: 200;
+        font-size: 15px;
+        font-family: Verdana;
+        box-shadow: 1px 1px 5px #CCC;
+        background: -webkit-gradient(linear, left top, left bottom, from(#aaa), to(#FFFFFF));
+        background: -moz-linear-gradient(top, #aaa, #FFFFFF);
+    }
+
+        select:hover {
+            width: 200px;
+            height: 29px;
+            border-radius: 3px;
+            border: 1px solid #CCC;
+            font-weight: 200;
+            font-size: 15px;
+            font-family: Verdana;
+            box-shadow: 1px 1px 5px #CCC;
+            border-color: #ff006e;
+        }
+
+
+    input[type='text'], input[type='password'], input[type='email'], input[type='tel'] {
+        width: 200px;
+        height: 29px;
+        border-radius: 3px;
+        border: 1px solid #CCC;
+        padding: 8px;
+        font-weight: 200;
+        font-size: 15px;
+        font-family: Verdana;
+        box-shadow: 1px 1px 5px #CCC;
+        background: -webkit-gradient(linear, left top, left bottom, from(#aaa), to(#FFFFFF));
+        background: -moz-linear-gradient(top, #aaa, #FFFFFF);
+    }
+
+        input[type='text']:hover, input[type='password']:hover, input[type='email']:hover, input[type='tel']:hover {
+            width: 200px;
+            height: 29px;
+            border-radius: 3px;
+            border: 1px solid #aaa;
+            padding: 8px;
+            font-weight: 200;
+            font-size: 15px;
+            font-family: Verdana;
+            box-shadow: 1px 1px 5px #CCC;
+            border-color: #ff006e;
+        }
+
+    input[type='date'] {
+        width: 200px;
+        height: 29px;
+        border-radius: 3px;
+        border: 1px solid #CCC;
+        padding: 8px;
+        font-weight: 200;
+        font-size: 15px;
+        font-family: Verdana;
+        box-shadow: 1px 1px 5px #CCC;
+        background: -webkit-gradient(linear, left top, left bottom, from(#aaa), to(#FFFFFF));
+        background: -moz-linear-gradient(top, #aaa, #FFFFFF);
+    }
+
+        input[type='date']:hover {
+            border-color: #ff006e;
+        }
+
+
+    input[type='submit'] {
+        width: 150px;
+        height: 34px;
+        border: 2px solid white;
+        background-color: #CCC;
+        background: -webkit-gradient(linear, left top, left bottom, from(#aaa), to(#FFFFFF));
+        background: -moz-linear-gradient(top, #aaa, #FFFFFF);
+    }
+
+        input[type='submit']:hover {
+            width: 150px;
+            height: 34px;
+            border: 2px solid white;
+            background-color: #000000;
+            color: #fff;
+            border-color: #ff006e;
+        }
+
+    label {
+        color: #ff006e;
+        font-weight: bold;
+        display: block;
+        width: 150px;
+        float: left;
+    }
+
+    H1 {
+        font-family: Georgia, serif;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0026ff;
+        letter-spacing: 1.4px;
+        border-bottom: solid 1px #0026ff;
+        text-transform: uppercase;
+    }
+
+    form {
+        background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#FFFFFF));
+        background: -moz-linear-gradient(top, #000000, #FFFFFF);
+    }
+    select:required:invalid {
+      color: gray;
+    }
+    option[value=""][disabled] {
+      display: none;
+    }
+    option {
+      color: black;
+    }
+</style>-->
+<ion-nav-bar class="bar-dark">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-android-arrow-back" ng-click="GoBack('inventoryItem')"></button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+<header class="bar bar-header bar-dark">
+    <h1 class="title">Sign Up</h1>
+</header>
+<form name="formSignUp" style="overflow-y: auto;">
+    <ion-view ng-controller="signUpController" ng-init="init()" style="margin-top:40px;">
+
+        <ion-content padding="true" style="overflow:auto">
+
+            <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+                <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                    <label>First Name</label>
+
+                </div>
+                <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                    <input type="text" style="float:right;border:1px solid grey" ng-model="signUp.FirstName" ng-required="true" required="required">
+                </div>
+            </ion-item>
+
+            <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+                <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                    <label>Last Name</label>
+
+                </div>
+                <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                    <input type="text" style="float:right;border:1px solid grey" ng-model="signUp.LastName" ng-required="true" required="required">
+                </div>
+            </ion-item>
+
+            <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+                <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                    <label>Email</label>
+
+                </div>
+                <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                    <input type="text" style="float:right;border:1px solid grey" ng-model="signUp.Email" ng-required="true" required="required">
+                </div>
+            </ion-item>
+
+            <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+                <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                    <label>User Profile</label>
+
+                </div>
+                <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                    <select id="userProfile" ng-model="signUp.User_Profile" ng-required="true" required="required" style="margin-left:-10px;height:35px;">
+                        <option value="">Choose Job Profile</option>
+                        <option value="1">Sales</option>
+                        <option value="2">Truck driver</option>
+                        <option value="3">Employee</option>
+                        <option value="4">Inventory Manager</option>
+                    </select>
+                </div>
+            </ion-item>
+
+            <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+                <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                    <label>Choose Gender</label>
+
+                </div>
+                <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                    <select id="gender" ng-model="signUp.Gender" ng-required="true" required="required" style="margin-left:0px;height:35px;">
+                        <option value="">Choose Gender</option>
+                        <option value="1">Female</option>
+                        <option value="2">Male</option>
+                    </select>
+                </div>
+            </ion-item>
+
+            <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+                <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                    <label>Contact Number</label>
+
+                </div>
+                <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                    <input type="text" style="float:right;border:1px solid grey" ng-model="signUp.contactNumber" ng-required="true" required="required">
+                </div>
+            </ion-item>
+
+            <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+                <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                    <label>Date Of Birth</label>
+
+                </div>
+                <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                    <input type="text" style="float:right;border:1px solid grey" ng-model="signUp.DOB" ng-required="true" required="required">
+                </div>
+            </ion-item>
+        </ion-content>
+       
+    </ion-view>
+    <ion-footer-bar style="height:70px !important;">
+        <input type="submit" class="button button-block button-dark" ng-disabled="formSignUp.$invalid" ng-click="buttonSignUpClick()">
+    </ion-footer-bar>
+</form>
+
+<!--<div ng-controller="signUpController" ng-init="init()">
+    <form name="formSignUp" style="overflow-y: auto;">
+        <h1>Sign Up</h1>
+        <div class="row" style="margin-top: 1em">
+
+            <div class="columns small-centered large-centered" style="width: 98%;">
+                <div class="row">
+                    <input type="text" id="fullName" placeholder="First Name" ng-model="signUp.FirstName" ng-required="true" required="required">
+                </div>
+                <br />
+                <div class="row">
+                    <input type="text" id="fullName" placeholder="Last Name" ng-model="signUp.LastName" ng-required="true" required="required">
+                </div>
+                <br />
+                <div class="row">
+                    <input type="email" id="email" placeholder="Email@.com" ng-model="signUp.Email" ng-required="false">
+                    <!--{{email.value= signUp.Email}}-->
+                <!--</div>
+                <br />
+                <div class="row">
+                    <select id="userProfile" ng-model="signUp.User_Profile" ng-required="true" required="required" placeholder="Job Profile">
+                        <option value="" disabled selected>Choose Job Profile</option>
+                        <option value="1">Sales</option>
+                        <option value="2">Truck driver</option>
+                        <option value="3">Employee</option>
+                        <option value="4">Inventory Manager</option>
+                    </select>
+                   
+                </div>
+                <br />
+                <div class="row">
+                    <select id="gender" ng-model="signUp.Gender" ng-required="true" required="required" placeholder="Gender">
+                        <option value="" disabled selected>Choose Gender</option>
+                        <option value="1">Female</option>
+                        <option value="2">Male</option>
+                    </select>
+                </div>
+                <br />
+                <div class="row">
+                    <input type="tel" id="contactNumber" placeholder="Contact Number" ng-model="signUp.contactNumber" ng-required="true" required="required">
+                </div>
+                iv
+                r
+                <br />
+                <div class="row">
+                    <input type="date" id="DOB" placeholder="Date Of Birth" ng-model="signUp.DOB" ng-required="false" width="100">
+                </div>
+                <br />
+                <div style="margin-bottom: 1.5em;margin-top: 0.5em; margin-right: 2.5em ; margin-left: 3.5em  " class="row" id="text">
+
+                    <button type="submit" class="buttonLogin secondary" ng-disabled="formSignUp.$invalid" ng-click="buttonSignUpClick()" style="width: 100%; margin-bottom: 1em;">Sign Up</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+    </form>
+</div>-->
+
+

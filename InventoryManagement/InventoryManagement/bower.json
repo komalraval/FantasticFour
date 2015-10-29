@@ -1,0 +1,7 @@
+{
+  "name": "InventoryManagement",
+  "dependencies": {
+    "chartjs": "1.0.1",
+"angular-chart.js": "*"
+  }
+}

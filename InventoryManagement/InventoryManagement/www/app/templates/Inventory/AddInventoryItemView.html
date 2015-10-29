@@ -1,0 +1,114 @@
+﻿<ion-nav-bar class="bar-dark">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-android-arrow-back" ng-click="GoBack('inventoryItem')"></button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+<header class="bar bar-header bar-dark">
+    <h1 class="title">Inventory Management </h1>
+</header>
+
+
+<!--<ion-nav-view></ion-nav-view>-->
+<ion-view ng-init="LoadAddOrUpdateView()">
+    <ion-content padding="true" style="overflow:auto">
+        <ion-item>
+            <input type="text" ng-model="itemName" class="col" style="font-weight:bold;vertical-align:bottom;padding-bottom:0px!important;margin-bottom:0px !important;margin-top:25px;text-align:center" />
+        </ion-item>
+        <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important"> 
+            <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                <label>Price</label>
+                
+            </div>
+            <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                <input type="text" style="float:right;border:1px solid grey" ng-model="invetoryItemObject.Price">
+            </div>
+        </ion-item >
+        <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+            <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                <label>Quantity</label>
+
+            </div>
+            <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                <input type="text" style="float:right;border:1px solid grey" ng-model="invetoryItemObject.Quantity">
+            </div>
+        </ion-item>
+        <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+            <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                <label>Location</label>
+
+            </div>
+            <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                <input type="text" style="float:right;border:1px solid grey" ng-model="invetoryItemObject.Location">
+            </div>
+        </ion-item>
+        <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+            <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                <label>UnitType</label>
+
+            </div>
+            <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                <input type="text" style="float:right;border:1px solid grey" ng-model="invetoryItemObject.UnitType">
+            </div>
+        </ion-item>
+        <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+            <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                <label>DateOfBuying</label>
+
+            </div>
+            <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                <input type="text" style="float:right;border:1px solid grey" ng-model="invetoryItemObject.DateOfBuying">
+            </div>
+        </ion-item>
+        <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+            <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                <label>StoreName</label>
+
+            </div>
+            <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                <input type="text" style="float:right;border:1px solid grey" ng-model="invetoryItemObject.StoreName">
+            </div>
+        </ion-item>
+        <ion-item style="height:50px;margin-top:2px;margin-bottom:2px;padding-top:5px!important;padding-bottom:5px!important">
+            <div style="float:left;padding-top:0px;margin-top:0px !important" class="col-50">
+                <label>ContactNumber</label>
+
+            </div>
+            <div style="float:right;padding-top:0px;margin-top:0px !important " class="col-50">
+                <input type="text" style="float:right;border:1px solid grey" ng-model="invetoryItemObject.ContactNumber">
+            </div>
+        </ion-item>
+    </ion-content>
+
+</ion-view>
+
+<drawer side="rightTop" style="height:190px;">
+    <header class="bar bar-header bar-dark">
+        <h1 class="title">Search Criteria </h1>
+    </header>
+    <ion-view>
+
+
+        <ion-content>
+            <!--<ion-list>-->
+            <ion-item>
+                <label>Name : </label>
+                <input type="text" style="float:right;border:2px solid black">
+            </ion-item>
+
+            <!--</ion-list>-->
+        </ion-content>
+    </ion-view>
+</drawer>
+
+<ion-footer-bar class="bar-dark">
+  
+    <button class="button" style="float:left" ng-click="SaveInventoryDetails()"> Save </button>
+
+    <button class="button" style="float:right" ng-click="ResetData()"> Reset </button>
+     
+
+
+</ion-footer-bar>
+
+

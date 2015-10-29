@@ -1,0 +1,195 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <title>Best Login Page design in html and css</title>
+    <style type="text/css">
+        /*body {
+            background-color: #f4f4f4;
+            color: #5a5656;
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.5em;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 1em;
+        }
+
+        h1, p {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }*/
+
+        /* ---------- LOGIN ---------- */
+        /*#login {
+            margin: 50px auto;
+            width: 300px;
+        }*/
+
+        /*form input[type="text"], input[type="password"] {
+            background-color: #e5e5e5;
+            border: none;
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            color: #5a5656;
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            height: 50px;
+            outline: none;
+            padding: 0px 10px;
+            width: 280px;
+            -webkit-appearance: none;
+        }
+
+        form input[type="submit"] {
+            background-color: #008dde;
+            border: none;
+            border-radius: 3px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            color: #f4f4f4;
+            cursor: pointer;
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            height: 50px;
+            text-transform: uppercase;
+            width: 300px;
+            -webkit-appearance: none;
+        }*/
+
+        /*form fieldset a {
+            color: #5a5656;
+            font-size: 10px;
+        }
+
+            form fieldset a:hover {
+                text-decoration: underline;
+            }
+
+        .btn-round {
+            background-color: #5a5656;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            color: #f4f4f4;
+            display: block;
+            font-size: 12px;
+            height: 50px;
+            line-height: 50px;
+            margin: 30px 125px;
+            text-align: center;
+            text-transform: uppercase;
+            width: 50px;
+        }*/
+    </style>
+</head>
+<body>
+
+
+    <!--<div ng-controller="loginController" ng-init="init()">-->
+    <!--<h1><strong>Welcome.</strong> Please login.</h1>
+    <form name="formLogin">
+
+        <p><input type="text" id="LoginID" placeholder="Login ID" ng-model="loginForm.username" ng-required="true" required="required" onBlur="if(this.value=='')this.value='Username'" onFocus="if(this.value=='Username')this.value='' "></p>
+        <p><input type="password" id="password" placeholder="Password" ng-model="loginForm.password" ng-required="true" required="required" onBlur="if(this.value=='')this.value='Password'" onFocus="if(this.value=='Password')this.value='' "></p>
+
+        <input type="submit" class="bar button button-dark" ng-disabled="formLogin.$invalid" ng-click="buttonLoginClick()">
+
+        <p><a ng-href="#/changePassword">Forgot Password?</a></p>
+        <p><a ng-href="#/SignUp" role="button">New User?? **Sign UP**</a></p>-->
+    <!--<ion-nav-bar class="bar-dark" title="Welcome To Inventory Management">
+        <ion-nav-back-button class="button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-nav-view></ion-nav-view>-->
+    <!--<header class="bar bar-header bar-dark">
+        <h1 class="title">Welcome To Inventory Management</h1>
+    </header>-->
+    <!--<script id="templates/sign-in.html" type="text/ng-template">-->
+    <header class="bar bar-header bar-dark">
+        <h1 class="title">Inventory Management</h1>
+    </header>
+    <ion-view style="margin-top: 45px;" ng-controller="loginController" ng-init="init()">
+
+        <ion-content>
+            <!--<img src="../../images/download.jpg" />-->
+            <div class="list" style="background-image: url(../../images/download.jpg);padding:5px;padding-left:10px;padding-right:10px;font-size:15px;padding-bottom:30px;font-weight:bold">
+                <p class="text-center" style="font-weight:bold;font-size:15px;">Welcome To Inventory Management</p>
+                <p style="font-size:13px;">It will make your life very easy.This app is very easy to use and manage the data of inventory.Just Login the app and you are entered into easy life !!!!  </p>
+            </div>
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="text" ng-model="loginForm.username" ng-required="true" required="required">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" ng-model="loginForm.password" ng-required="true" required="required">
+                </label>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-dark" ng-click="buttonLoginClick()">
+                    Sign-In
+                </button>
+                <p class="text-center">
+                    <a href="#/changePassword">Forgot password</a>
+                </p>
+                <p class="text-center">
+                    <a href="#/SignUp">Sign Up</a>
+                </p>
+            </div>
+        </ion-content>
+    </ion-view>
+    <!--</script>-->
+    <!--</div>--> <!-- end login -->
+</body>
+</html>
+
+<!--<div ng-controller="loginController" ng-init="init()">
+    <form name="formLogin">
+        <h1>Login</h1>
+        <div class="row" style="margin-top: 1em">
+
+            <div class="columns small-centered large-centered" style="width: 98%;">
+                <div class="radius panel login-center-panel">
+
+                    <div class="row">
+                        &nbsp&nbsp&nbsp <input type="text" class="loginInput" id="LoginID" placeholder="Login ID" ng-model="loginForm.username" ng-required="true" required="required">
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        &nbsp&nbsp&nbsp<input type="password" class="loginInput" id="password" placeholder="Password" ng-model="loginForm.password" ng-required="true" required="required">
+                    </div>
+                    <br />
+                    <div style="margin-bottom: 1.5em;margin-top: 0.5em; margin-right: 2.5em ; margin-left: 3.5em  " class="row" id="text">
+
+                        <button type="submit" class="buttonLogin secondary" ng-disabled="formLogin.$invalid" ng-click="buttonLoginClick()" style="width: 100%; margin-bottom: 1em;">Log In</button>
+                    </div>
+
+                    <div class=" row">
+                        <a ng-href="#/SignUp" role="button">New User?? **Sign UP**</a>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp
+                        <div class=" row">
+                            <a ng-href="#/changePassword">ForgotPassword</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>-->

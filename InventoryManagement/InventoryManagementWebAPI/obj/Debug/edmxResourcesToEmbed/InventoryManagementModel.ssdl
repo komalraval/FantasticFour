@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InventoryManagementDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="InventoryItemtbl">
+    <Key>
+      <PropertyRef Name="InventoryItemId" />
+    </Key>
+    <Property Name="InventoryListId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfBuying" Type="varchar" MaxLength="50" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+    <Property Name="Quantity" Type="varchar" MaxLength="50" />
+    <Property Name="UnitType" Type="varchar" MaxLength="50" />
+    <Property Name="InventoryItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InventoryList">
+    <Key>
+      <PropertyRef Name="InventoryListId" />
+    </Key>
+    <Property Name="InventoryListId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="varchar" MaxLength="50" />
+    <Property Name="TotalCost" Type="int" />
+    <Property Name="TotalItems" Type="int" />
+    <Property Name="Percentage" Type="int" />
+    <Property Name="UnitType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="User_ID_Ref" Type="int" />
+  </EntityType>
+  <EntityType Name="Personnel">
+    <Key>
+      <PropertyRef Name="Personnel_ID" />
+    </Key>
+    <Property Name="Personnel_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_ID" Type="int" />
+    <Property Name="Absent" Type="varchar" MaxLength="50" />
+    <Property Name="present" Type="varchar" MaxLength="50" />
+    <Property Name="User_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UsedInventoryDetailsTbl">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="InventoryItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AmountOfUsed" Type="int" />
+    <Property Name="UnitType" Type="varchar" MaxLength="50" />
+    <Property Name="ActivityType" Type="varchar" MaxLength="50" />
+    <Property Name="Date" Type="varchar" MaxLength="50" />
+    <Property Name="Location" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User_Details">
+    <Key>
+      <PropertyRef Name="User_ID_Ref" />
+    </Key>
+    <Property Name="User_ID_Ref" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile_Number" Type="varchar" MaxLength="50" />
+    <Property Name="Email_ID" Type="varchar" MaxLength="50" />
+    <Property Name="User_Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_InventoryItemtbl_InventoryList">
+    <End Role="InventoryList" Type="Self.InventoryList" Multiplicity="1" />
+    <End Role="InventoryItemtbl" Type="Self.InventoryItemtbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryList">
+        <PropertyRef Name="InventoryListId" />
+      </Principal>
+      <Dependent Role="InventoryItemtbl">
+        <PropertyRef Name="InventoryListId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personnel_User_Details">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="0..1" />
+    <End Role="Personnel" Type="Self.Personnel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="User_ID_Ref" />
+      </Principal>
+      <Dependent Role="Personnel">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsedInventoryDetailsTbl_User_Details">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="1" />
+    <End Role="UsedInventoryDetailsTbl" Type="Self.UsedInventoryDetailsTbl" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="User_ID_Ref" />
+      </Principal>
+      <Dependent Role="UsedInventoryDetailsTbl">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InventoryManagementDBModelStoreContainer">
+    <EntitySet Name="InventoryItemtbl" EntityType="Self.InventoryItemtbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryList" EntityType="Self.InventoryList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personnel" EntityType="Self.Personnel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsedInventoryDetailsTbl" EntityType="Self.UsedInventoryDetailsTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Details" EntityType="Self.User_Details" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_InventoryItemtbl_InventoryList" Association="Self.FK_InventoryItemtbl_InventoryList">
+      <End Role="InventoryList" EntitySet="InventoryList" />
+      <End Role="InventoryItemtbl" EntitySet="InventoryItemtbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personnel_User_Details" Association="Self.FK_Personnel_User_Details">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="Personnel" EntitySet="Personnel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsedInventoryDetailsTbl_User_Details" Association="Self.FK_UsedInventoryDetailsTbl_User_Details">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="UsedInventoryDetailsTbl" EntitySet="UsedInventoryDetailsTbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
