@@ -1,13 +1,62 @@
-﻿
+﻿<div style="overflow-y:auto">
 <ion-nav-bar class="bar-dark">
     <ion-nav-back-button></ion-nav-back-button>
     <ion-nav-buttons side="left">
-        <button menu-toggle="left" class="button button-icon icon ion-android-arrow-back" ng-click="GoBack('inventoryItem')"></button>
+        <button menu-toggle="left" class="button button-icon icon ion-android-arrow-back" ng-click="goback('menuList')"></button>
     </ion-nav-buttons>
 </ion-nav-bar>
 <header class="bar bar-header bar-dark">
     <h1 class="title">Reports</h1>
 </header>
-<div ng-init="init()">
-    <canvas id="pie" class="chart chart-pie" data="polarData.data" labels="polarData.labels"  legend="true"></canvas>
+<div ng-controller="ReportsController" ng-init="init('Total Item')" style="margin-top:50px;">
+    <canvas id="pie" chart-data="polarData.data" class="chart chart-pie" labels="polarData.labels"  legend="true" chart-legend="true"></canvas>
+    <canvas id="pieCost" chart-data="dataCost" class="chart chart-pie" labels="polarData.labels"  legend="true"></canvas>
 </div>
+    <div class="text-center">
+        <div class="list">
+            <ion-item>
+                <label>
+                    <input type="radio" ng-model="DisplayCriteria.name" value="Total Item" ng-change="RadioButtonSelection()">
+                    Total Item
+                </label>
+            </ion-item>
+            <ion-item>
+                <label>
+                    <input type="radio" ng-model="DisplayCriteria.name" value="Total Cost" ng-change="RadioButtonSelection()">
+                    Total Cost
+                </label>
+            </ion-item>
+        </div>
+
+    </div>
+       
+   
+    <!--<div class="list">
+
+        <label class="item item-radio" ng-model="DisplayCriteria.name" ng-change="RadioButtonSelection()">
+            <input type="radio" name="group" >
+            <div class="item-content">
+                Total Item
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+        </label>
+        <label class="item item-radio" ng-model="DisplayCriteria.name" ng-change="RadioButtonSelection()">
+            <input type="radio" name="group" >
+            <div class="item-content">
+                Total Cost
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+        </label>
+
+    </div>-->
+    <ion-footer-bar class="bar-dark">
+
+        <tt class="title" ng-bind="DisplayCriteria.name"></tt>
+        <!--<h1 class="title" ng-show="!isTotalItem">Total Cost</h1>-->
+        <!--<label ng-bind="displayChartBase" style="color:white;font-weight:bold;vertical-align:bottom" class="text-center"> </label>-->
+
+    </ion-footer-bar>
+</div>
+
+
+<!--<button ng-click="export()">Export</button>-->

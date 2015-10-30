@@ -128,8 +128,23 @@ namespace InventoryManagementWebAPI.Controllers
                 using (var ctx = new InventoryManagementDBEntities())
                 {
                     inventoryItemToDelete = ctx.InventoryLists.Where(s => s.InventoryListId == Id).FirstOrDefault<InventoryList>();
+                  
                 }
 
+                using (var dbctx = new InventoryManagementDBEntities())
+                {
+                    List<InventoryItemtbl> inventoryItemDetails = dbctx.InventoryItemtbls.Where(p => p.InventoryListId == Id).ToList<InventoryItemtbl>();
+                    //foreach(InventoryItemtbl obj in inventoryItemDetails)
+                    //{
+                    //    InventoryItemtbl item = obj;
+                        dbctx.InventoryItemtbls.RemoveRange(inventoryItemDetails);
+                      //  dbctx.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+
+                        dbctx.SaveChanges();
+
+                    //    message = "Success";
+                    //}
+                }
                 //Create new context for disconnected scenario
                 using (var newContext = new InventoryManagementDBEntities())
                 {
@@ -142,9 +157,9 @@ namespace InventoryManagementWebAPI.Controllers
 
 
             }
-            catch (Exception)
+            catch (Exception  ex)
             {
-                message = "Error";
+                message = "Error" + ex.Message;
                 return message;
             }
             return message;

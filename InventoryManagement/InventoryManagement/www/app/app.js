@@ -74,7 +74,7 @@
              })
              .state("report", {
                  url: "/report",
-                 templateUrl: "app/templates/Reports/temp.html",
+                 templateUrl: "app/templates/Reports/ReportStock.html",
                  controller: "ReportsController"
              })
             .state("app", {

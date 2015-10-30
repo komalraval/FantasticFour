@@ -71,8 +71,13 @@ namespace WebAPI.Controllers
                     smtp.EnableSsl = true;
                     smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
                     smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
+                    
                     //smtp.Timeout = 20000;
                 }
+                //  MailMessage msg = new System.Net.Mail.MailMessage();
+
+               
+
                 // Passing values to smtp object
                 smtp.Send(fromAddress, toAddress, subject, body);
             }
@@ -300,6 +305,57 @@ namespace WebAPI.Controllers
             //}
            
             //return true;
+        }
+
+
+        [System.Web.Http.AcceptVerbs("GET", "POST")]
+       // [System.Web.Http.HttpGet]
+        [HttpGet]
+        public string ExportReport()
+        {
+
+            string message = string.Empty;
+
+
+            //var fromAddress = "inventorymanagementapp@gmail.com";
+
+            //var toAddress = "komal.raval@allscripts.com";
+
+            //const string fromPassword = "Inventory";
+
+            try
+            {
+
+
+                //MailMessage mail = new MailMessage();
+                //SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                //mail.From = new MailAddress(fromAddress);
+                //mail.To.Add(toAddress);
+                //mail.Subject = "Test Mail - 1";
+                //mail.Body = "mail with attachment";
+
+                //System.Net.Mail.Attachment attachment;
+                //attachment = new System.Net.Mail.Attachment(@"C:\Users\K735701\Desktop\test.xlsx");
+                //mail.Attachments.Add(attachment);
+                //SmtpServer.Port = 587;
+                //SmtpServer.Credentials = new System.Net.NetworkCredential(fromAddress, fromPassword);
+                //SmtpServer.EnableSsl = true;
+
+                //SmtpServer.Send(mail);
+                message = "Success";
+
+
+
+            }
+            catch (Exception e)
+            {
+                string err = e.ToString();
+                message = "Error";
+
+            }
+            return message;
+            //  return Ok();
+
         }
 
 
