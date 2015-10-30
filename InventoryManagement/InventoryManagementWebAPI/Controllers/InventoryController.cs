@@ -128,23 +128,8 @@ namespace InventoryManagementWebAPI.Controllers
                 using (var ctx = new InventoryManagementDBEntities())
                 {
                     inventoryItemToDelete = ctx.InventoryLists.Where(s => s.InventoryListId == Id).FirstOrDefault<InventoryList>();
-                  
                 }
 
-                using (var dbctx = new InventoryManagementDBEntities())
-                {
-                    List<InventoryItemtbl> inventoryItemDetails = dbctx.InventoryItemtbls.Where(p => p.InventoryListId == Id).ToList<InventoryItemtbl>();
-                    //foreach(InventoryItemtbl obj in inventoryItemDetails)
-                    //{
-                    //    InventoryItemtbl item = obj;
-                        dbctx.InventoryItemtbls.RemoveRange(inventoryItemDetails);
-                      //  dbctx.Entry(item).State = System.Data.Entity.EntityState.Deleted;
-
-                        dbctx.SaveChanges();
-
-                    //    message = "Success";
-                    //}
-                }
                 //Create new context for disconnected scenario
                 using (var newContext = new InventoryManagementDBEntities())
                 {
@@ -157,9 +142,9 @@ namespace InventoryManagementWebAPI.Controllers
 
 
             }
-            catch (Exception  ex)
+            catch (Exception)
             {
-                message = "Error" + ex.Message;
+                message = "Error";
                 return message;
             }
             return message;
@@ -189,11 +174,7 @@ namespace InventoryManagementWebAPI.Controllers
                         item.Price = obj.Price;
                         item.Quantity = obj.Quantity.ToString();
                         item.DateOfBuying = obj.DateOfBuying;
-
-                        //var inventoryListsData= dbCtx.InventoryLists;
-                        //item.inventoryList = inventoryListsData.FirstOrDefault(p=>p.InventoryListId == obj.InventoryListId);
                         listInventoryItemDetails.Add(item);
-
                         // }
                     }
                 }
@@ -256,60 +237,22 @@ namespace InventoryManagementWebAPI.Controllers
                     entity.Price = objItem.Price;
                     entity.Quantity = objItem.Quantity;
                     entity.UnitType = objItem.UnitType;
-                    
+                    //entity.UserId = 0;
+
+
                     dbCtx.InventoryItemtbls.Add(entity);
+
                     dbCtx.SaveChanges();
-
-                    List<InventoryItemtbl> obj = dbCtx.InventoryItemtbls.Where(p => p.InventoryListId == objItem.IdItem).ToList<InventoryItemtbl>();
-                    int totalPrice = 0;
-                    int totalQuantity = 0;
-
-                    foreach(InventoryItemtbl data in obj)
-                    {
-                        totalQuantity = totalQuantity + Convert.ToInt32(data.Quantity);
-                        totalPrice = totalPrice + (Convert.ToInt32(data.Quantity) * Convert.ToInt32(data.Price));
-                    }
-                    //if (obj != null)
-                    //{
-                    //    item.IdDetails = obj.InventoryItemId;
-                    //    item.IdItem = obj.InventoryListId;
-                    //    // item.IdUser = obj.UserId;
-                    //    item.Location = obj.Location;
-                    //    item.UnitType = obj.UnitType;
-                    //    item.Price = obj.Price;
-                    //    item.Quantity = obj.Quantity.ToString();
-                    //    item.DateOfBuying = obj.DateOfBuying;
-                    //    return item;
-                    //}
-
-                    InventoryList list = new InventoryList();
-                    list.InventoryListId = objItem.IdItem;
-                    list.ItemName = objItem.ItemName;
-                    list.TotalCost = totalPrice;
-                    list.TotalItems = totalQuantity;
-                    dbCtx.Entry(list).State = System.Data.Entity.EntityState.Modified;
-                    dbCtx.SaveChanges();
-
-
                     IsSuccessOrError = "Success";
                     message = "Item has been added successfully.";
                 }
 
-                //using (var dbCtxInv = new InventoryManagementDBEntities())
-                //{
-                //    InventoryList list = new InventoryList();
-                //    list.TotalCost = 40000;
-                //    var inventoryListsData = dbCtxInv.InventoryLists;
-                //    InventoryList inventoryList = inventoryListsData.Where(p => p.InventoryListId == objItem.IdItem).FirstOrDefault<InventoryList>();
-                //    list.ItemName = inventoryList.ItemName;
-                //    dbCtxInv.Entry(list).State = System.Data.Entity.EntityState.Modified;
-                //    dbCtxInv.SaveChanges();
-                //}
+
 
             }
             catch (Exception ex)
             {
-                message = "Error While adding item in Database." + ex.Message + "inner : " + ex.InnerException + "Id : " + objItem.IdItem + "Name : " + objItem.ItemName;
+                message = "Error While adding item in Database.";
                 IsSuccessOrError = "Error";
                 return IsSuccessOrError + ";" + message;
             }
@@ -409,7 +352,6 @@ namespace InventoryManagementWebAPI.Controllers
         }
     }
 
-
     public class classInventoryItemsDetails
     {
         public int IdDetails { get; set; }
@@ -426,8 +368,6 @@ namespace InventoryManagementWebAPI.Controllers
 
         public string UnitType { get; set; }
 
-        public string ItemName { get; set; }
-        //public virtual InventoryList inventoryList { get; set; }
         //  public string SuccessMessage { get; set; }
     }
 

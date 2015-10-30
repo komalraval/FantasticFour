@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\K735701\Documents\Visual Studio 2015\Projects\InventoryManagement\InventoryManagementWebAPI\InventoryManagementModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\InventoryManagementModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

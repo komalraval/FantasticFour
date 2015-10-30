@@ -27,36 +27,37 @@ C:\Users\K735701\Documents\Visual Studio 2015\Projects\InventoryManagement\Inven
 C:\Users\K735701\Documents\Visual Studio 2015\Projects\InventoryManagement\InventoryManagementWebAPI\bin\System.Net.Http.Formatting.xml
 C:\Users\K735701\Documents\Visual Studio 2015\Projects\InventoryManagement\InventoryManagementWebAPI\bin\System.Web.Http.xml
 C:\Users\K735701\Documents\Visual Studio 2015\Projects\InventoryManagement\InventoryManagementWebAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\K735701\Documents\Visual Studio 2015\Projects\InventoryManagement\InventoryManagementWebAPI\obj\Debug\InventoryManagementWebAPI.csprojResolveAssemblyReference.cache
 C:\Users\K735701\Documents\Visual Studio 2015\Projects\InventoryManagement\InventoryManagementWebAPI\obj\Debug\InventoryManagementWebAPI.dll
 C:\Users\K735701\Documents\Visual Studio 2015\Projects\InventoryManagement\InventoryManagementWebAPI\obj\Debug\InventoryManagementWebAPI.pdb
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\csc.exe
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\vbc.exe
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\VBCSCompiler.exe
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\InventoryManagementWebAPI.dll.config
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\InventoryManagementWebAPI.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\InventoryManagementWebAPI.pdb
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\EntityFramework.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\EntityFramework.SqlServer.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\Newtonsoft.Json.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\System.Net.Http.Formatting.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\System.Web.Http.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\System.Web.Http.WebHost.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\EntityFramework.xml
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\EntityFramework.SqlServer.xml
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\Newtonsoft.Json.xml
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\System.Net.Http.Formatting.xml
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\System.Web.Http.xml
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\bin\System.Web.Http.WebHost.xml
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\obj\Debug\InventoryManagementWebAPI.dll
-C:\Users\K735701\Documents\Visual Studio 2015\Projects\FantasticFour\InventoryManagement\InventoryManagementWebAPI\obj\Debug\InventoryManagementWebAPI.pdb
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\csc.exe
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\vbc.exe
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\InventoryManagementWebAPI.dll.config
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\InventoryManagementWebAPI.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\InventoryManagementWebAPI.pdb
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\EntityFramework.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\Newtonsoft.Json.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\System.Web.Http.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\EntityFramework.xml
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\Newtonsoft.Json.xml
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\System.Web.Http.xml
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\obj\Debug\InventoryManagementWebAPI.dll
+C:\Users\RSingh3\Desktop\inventory\10_27_2015_Evening\InventoryManagement\InventoryManagementWebAPI\obj\Debug\InventoryManagementWebAPI.pdb

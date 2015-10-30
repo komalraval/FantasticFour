@@ -17,9 +17,7 @@
             StoreName: undefined,
             ContactNumber: undefined,
             IdItem: undefined,
-            IdDetails: undefined,
-            ItemName : undefined
-           // inventoryList : undefined
+            IdDetails: undefined
         };
 
 
@@ -166,7 +164,6 @@
                     $scope.invetoryItemObject.Price = dataInventory.Price;
                     $scope.invetoryItemObject.IdItem = data.Id;
                     $scope.invetoryItemObject.IdDetails = dataInventory.IdDetails;
-                   // $scope.invetoryItemObject.inventoryList = dataInventory.inventoryList;
 
                   
 
@@ -176,7 +173,6 @@
                 //alert("Add");
                 $scope.IsAddViewEnable = "Yes";
                 $scope.invetoryItemObject.IdItem = data.Id;
-                $scope.invetoryItemObject.ItemName = $rootScope.itemName;
             }
 
         }
@@ -309,8 +305,7 @@
 
         $scope.ShowInventoryItems = function () {
             //  alert($rootScope.itemName);
-        
-            
+           
             var idList = $rootScope.IdItem;
 
             $http.get('http://localhost:53771/api/Inventory/GetListOfInventoryItemsDetails/').success(function (listInventoryItemDetails) {
@@ -345,7 +340,6 @@
         $scope.SaveInventoryDetails = function () {
 
             if ($scope.IsAddViewEnable == "Yes") {
-               
                 //alert($scope.invetoryItemObject.IdItem);
                 $http.post('http://localhost:53771/api/Inventory/AddInventoryItemDetails/', $scope.invetoryItemObject)
 
@@ -355,14 +349,10 @@
                        
                         var array = response.split(';');
                         if (array[0] == "Success") {
-                            
-                            //$scope.ShowInventoryItems();
                             var alertPopup = $ionicPopup.alert({
                                 title: 'Success',
                                 template: array[1]
                             });
-
-                            $state.go('inventoryItem');
                         }
                         else if (array[0] == "Error") {
                             var alertPopup = $ionicPopup.alert({
@@ -379,7 +369,6 @@
                 //alert($scope.invetoryItemObject.IdDetails);
 
                 var objItem = $scope.invetoryItemObject;
-               
                 var url = "http://localhost:53771/api/Inventory/UpdateInventoryItemDetails/" + objItem;
                 $http({ method: 'PUT', url: url })
                   .success(function (data) {

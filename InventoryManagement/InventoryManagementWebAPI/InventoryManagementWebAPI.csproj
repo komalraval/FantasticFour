@@ -110,7 +110,6 @@
     <Compile Include="Controllers\InventoryController.cs" />
     <Compile Include="Controllers\LoginsController.cs" />
     <Compile Include="Controllers\PersonnelController.cs" />
-    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DBOperationsInventory.cs" />
     <Compile Include="DBOperationsUsers.cs" />

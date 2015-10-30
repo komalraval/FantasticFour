@@ -1,6 +1,5 @@
 {
   "changedFilesIos": [
-    "www\\scripts\\angular-ui-router\\api\\angular-ui-router.d.ts",
     "www\\lib\\ionic\\scss\\_refresher.scss",
     "www\\scripts\\jquery\\dist\\jquery.min.map",
     "res\\platforms\\android\\cordova\\lib\\plugin-build.gradle",
@@ -8,7 +7,6 @@
     "www\\lib\\ionic\\js\\angular\\angular-animate.js",
     "www\\scripts\\bootstrap\\less\\labels.less",
     "www\\scripts\\angular-ui-router\\src\\common.js",
-    "www\\app\\templates\\Reports\\ReportStock.html",
     "www\\lib\\ionic\\js\\angular\\angular.min.js",
     "www\\lib\\ionic\\scss\\_items.scss",
     "www\\scripts\\bootstrap\\less\\mixins\\vendor-prefixes.less",
@@ -572,14 +570,12 @@
     "res\\platforms\\android\\cordova\\check_reqs",
     "www\\lib\\ionic\\scss\\_radio.scss",
     "www\\lib\\angular-chart\\dist\\angular-chart.min.css",
-    "www\\scripts\\bootstrap\\less\\.csslintrc",
-    "www\\app\\reportscontroller.js"
+    "www\\scripts\\bootstrap\\less\\.csslintrc"
   ],
   "deletedFilesIos": [],
   "addedPluginsIos": [],
   "deletedPluginsIos": [],
   "changedFiles": [
-    "www\\scripts\\angular-ui-router\\api\\angular-ui-router.d.ts",
     "www\\lib\\ionic\\scss\\_refresher.scss",
     "www\\scripts\\jquery\\dist\\jquery.min.map",
     "res\\platforms\\android\\cordova\\lib\\plugin-build.gradle",
@@ -587,7 +583,6 @@
     "www\\lib\\ionic\\js\\angular\\angular-animate.js",
     "www\\scripts\\bootstrap\\less\\labels.less",
     "www\\scripts\\angular-ui-router\\src\\common.js",
-    "www\\app\\templates\\Reports\\ReportStock.html",
     "www\\lib\\ionic\\js\\angular\\angular.min.js",
     "www\\lib\\ionic\\scss\\_items.scss",
     "www\\scripts\\bootstrap\\less\\mixins\\vendor-prefixes.less",
@@ -1151,8 +1146,7 @@
     "res\\platforms\\android\\cordova\\check_reqs",
     "www\\lib\\ionic\\scss\\_radio.scss",
     "www\\lib\\angular-chart\\dist\\angular-chart.min.css",
-    "www\\scripts\\bootstrap\\less\\.csslintrc",
-    "www\\app\\reportscontroller.js"
+    "www\\scripts\\bootstrap\\less\\.csslintrc"
   ],
   "deletedFiles": [],
   "addedPlugins": [],

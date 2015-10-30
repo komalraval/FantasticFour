@@ -1,7 +1,7 @@
 ﻿<html>
 <head>
     <meta charset="utf-8">
-    <title>Best Login Page design in html and css</title>
+    <!--<title>Best Login Page design in html and css</title>
     <style type="text/css">
         body {
             background-color: #f4f4f4;
@@ -91,13 +91,46 @@
             text-align: center;
             text-transform: uppercase;
             width: 50px;
-        }
-    </style>
-</head> 
+        }-->
+    <!--</style>-->
+</head>
 <body>
 
+    <header class="bar bar-header bar-dark">
+        <h1 class="title">Absent or Present</h1>
+    </header>
+    <div ng-controller="changePassword" ng-init="init()">
+        <h1> Absent or Present</h1>
+        <form name="changePassword">
+            <fieldset>
+                <div class="list" style="background-image: url(../../images/download.jpg);padding:5px;padding-left:10px;padding-right:10px;font-size:15px;padding-bottom:30px;font-weight:bold">
 
-    <div ng-controller="Personnel" ng-init="init()">
+                    <p style="font-size:13px;">Note :  Fill the attendence.</p>
+                </div>
+                <!--<p><input type="text"  id="userName" placeholder="UserName" ng-model="changePasswordForm.userName" ng-required="true" required="required"onBlur="if(this.value=='')this.value='Username'" onFocus="if(this.value=='Username')this.value='' "></p>-->
+                <span class="input-label">User Name : </span>
+                <input type="text" ng-model="Personnel.userName" ng-required="true" required="required" style="border:1px solid grey;width:100%">
+                <span class="input-label">
+                    Absent :
+                    <input type="radio" name=" AbsentOrPresent" ng-model="Personnel.Absent" id="AbsentOrPresent_ID" value="1" style="border:1px solid grey;width:100%">
+                </span>
+                <span class="input-label">
+                    Present :
+                    <input type="radio" name=" AbsentOrPresent" ng-model="Personnel.Present" id="AbsentOrPresent_ID" value="2" style="border:1px solid grey;width:100% ">
+                </span>
+                <span class="input-label">
+                    Date :
+                    <input type="date" id="DOB" placeholder="Date Of Birth" ng-model="Personnel.date" value="Personnel.date" min="2015-01-01" max="2099-12-31" style="border:1px solid grey;width:100%">
+                </span>
+                <p><input type="submit" class="button button-block button-dark" ng-disabled="changePasswordForm.$invalid" ng-click="Submit()"> </p>
+            </fieldset>
+        </form>
+
+    </div> <!-- end login -->
+</body>
+</html>
+
+<!--<div ng-controller="Personnel" ng-init="init()">
         <h1> Absent or Present.</h1>
         <form name="Personnel">
             <fieldset>
@@ -106,13 +139,13 @@
                 <input type="radio" name=" AbsentOrPresent" ng-model="Personnel.Absent"  id="AbsentOrPresent_ID" value="1"></p>
                 <p><label for="AbsentOrPresent_ID">Present</label>
                 <input type="radio" name=" AbsentOrPresent" ng-model="Personnel.Present"  id="AbsentOrPresent_ID" value="2"></p>
-                <p> 
+                <p>
                 <input type="date" id="DOB" placeholder="Date Of Birth" ng-model="Personnel.date" value="Personnel.date" min="2015-01-01" max="2099-12-31" width="100">
                 </p>
                 <p><input type="submit" class="buttonLogin secondary"  ng-click="Submit()"> </p>
             </fieldset>
         </form>
 
-    </div> <!-- end login -->
+    </div>
 </body>
-</html>
+</html>-->

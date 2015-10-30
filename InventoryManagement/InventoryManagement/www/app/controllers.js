@@ -6,7 +6,7 @@
     .controller("appCtrl", ["$scope", function ($scope) {
     }])
 
-        .controller('loginController', ['$scope','$state','$http', function ($scope,$state,$http) {
+        .controller('loginController', ['$scope', '$ionicPopup', '$state', '$http', function ($scope,$ionicPopup, $state, $http) {
 
             $scope.loginForm = {
                 username: undefined,
@@ -30,7 +30,10 @@
                     $scope.loginForm.UserID = data.User_ID;
                 })
                 .error(function () {
-                    alert(data);
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Error!',
+                        template: "There is some problem with network , please try again later"
+                    });
                 })
 
                 $http({
@@ -39,24 +42,31 @@
                     method: "GET"
                 })
                 .success(function (data) {
-                    alert(data);
+                    //alert(data);
                     if (data) {
                         $state.go("menuList");
                     }
                     else {
-                        alert("UserName or Password is not correct, please try again");
+                        //alert("UserName or Password is not correct, please try again");
+                        var alertPopup = $ionicPopup.alert({
+                            title: 'Error!',
+                            template: "UserName or Password is not correct, please try again"
+                        });
                         $state.go("login");
                     }
                 })
                .error(function () {
-                   alert(data);
+                   var alertPopup = $ionicPopup.alert({
+                       title: 'Error!',
+                       template: "Network issue..!!"
+                   });
                })
 
                 
             };
         }])
 
-        .controller('ForgotPassword', ['$scope', '$state', '$http', function ($scope, $state, $http) {
+        .controller('ForgotPassword', ['$scope', '$ionicPopup', '$state', '$http', function ($scope,$ionicPopup, $state, $http) {
 
             $scope.ForgotPassword = {
                 userName: undefined
@@ -68,20 +78,27 @@
             $scope.buttonChangePasswordClick = function () {
 
                
-                var ModifyParameter = { "user_name": $scope.changePasswordForm.userName, "password":  Math.floor(Math.random() * 90000) + 10000 }
+                var ModifyParameter = { "user_name": $scope.ForgotPassword.userName, "password": Math.floor(Math.random() * 90000) + 10000 }
                 $http.put('http://localhost:53771/api/logins/ForgotPasswoord', ModifyParameter)
                         .success(function (data) {
-                            alert("Your password is changed sucessfully, Please check your email..!!");
+                            var alertPopup = $ionicPopup.alert({
+                                title: 'Error!',
+                                template: "Your password is changed sucessfully, Please check your email..!!"
+                            });
                             $state.go("login");
                         })
                         .error(function () {
+                            var alertPopup = $ionicPopup.alert({
+                                title: 'Error!',
+                                template: "Some netowrk issue"
+                            });
                             $state.go("login");
                         });
 
             };
         }])
 
-         .controller('changePassword', ['$scope', '$state', '$http', function ($scope, $state, $http) {
+         .controller('changePassword', ['$scope','$ionicPopup', '$state', '$http', function ($scope,$ionicPopup, $state, $http) {
 
              $scope.changePasswordForm = {
                  password: undefined,
@@ -99,24 +116,33 @@
                      var ModifyParameter = { "user_name": $scope.changePasswordForm.userName, "password": $scope.changePasswordForm.password }
                      $http.put('http://localhost:53771/api/logins/ChangePassword', ModifyParameter)
                          .success(function (data) {
-                             alert("Your password is changed sucessfully..!!");
+                             var alertPopup = $ionicPopup.alert({
+                                 title: 'Error!',
+                                 template: "Your password is changed sucessfully..!!"
+                             });
                              $state.go("login");
                          })
                          .error(function () {
-                             alert("Error while creating Tenant");
+                             var alertPopup = $ionicPopup.alert({
+                                 title: 'Error!',
+                                 template: "Network issue..!!"
+                             });
                              $state.go("login");
                          });
                  }
                  else
                  {
-                     alert("Please provide valid password");
+                     var alertPopup = $ionicPopup.alert({
+                         title: 'Error!',
+                         template: "Please provide valid password"
+                     });
                  }
 
              };
          }])
 
          //signup
-        .controller('signUpController', ['$scope', '$state', '$http', function ($scope, $state, $http) {
+        .controller('signUpController', ['$scope', '$ionicPopup','$state', '$http', function ($scope,$ionicPopup, $state, $http) {
             //debugger;
             var UserNameExitsOrNot;
             $scope.signUp = {
@@ -134,7 +160,7 @@
                 // debugger;
             };
             $scope.buttonSignUpClick = function () {
-                alert($scope.signUp.fullName);
+                
                 $http({
                     method: 'GET',
                     dataType: 'json',
@@ -142,7 +168,6 @@
                 })
                 .success(function (data) {
                     $scope.logins = data;
-                    alert(data[0].User_ID);
                 });
                 //check user is laready exists or not
                 var login = { "user_name": $scope.signUp.Email }
@@ -153,11 +178,13 @@
                     method: "GET"
                 })
                     .success(function (data) {
-                        alert("sucess" + data);
                         UserNameExitsOrNot = data;
                     })
                     .error(function () {
-                        alert("Error while creating Tenant");
+                        var alertPopup = $ionicPopup.alert({
+                            title: 'Error!',
+                            template: "Network issue..!!"
+                        });
                     })
                 if (UserNameExitsOrNot == false && UserNameExitsOrNot != undefined) {
                     var parameters = {
@@ -166,28 +193,32 @@
                     }
                     $http.post('http://localhost:53771/api/user/SaveUser', parameters)
                         .success(function (data) {
-                            alert("sucess" + data);
                         })
                         .error(function () {
-                            alert("Error while creating Tenant");
+                            var alertPopup = $ionicPopup.alert({
+                                title: 'Error!',
+                                template: "Network issue..!!"
+                            });
                         });
                     var passwordrandom = Math.floor(Math.random() * 90000) + 10000;;
                     var parameters = { "user_name": $scope.signUp.Email, "password": passwordrandom, "name": $scope.signUp.FirstName + $scope.signUp.LastName }
                     $http.post('http://localhost:53771/api/logins/savedata1', parameters)
                         .success(function (data) {
-                            alert("sucess" + data);
                         })
                         .error(function () {
-                            alert("error while creating tenant");
+                            var alertPopup = $ionicPopup.alert({
+                                title: 'Error!',
+                                template: "Network Issue..!!"
+                            });
                         });
                     //modify
                     var ModifyParameter = { "user_name": "RakheeMofified2", "User_ID": "8" }
                     $http.put('http://localhost:53771/api/logins/UpdateData', ModifyParameter)
                         .success(function (data) {
-                            alert("sucess" + data);
+                            
                         })
                         .error(function () {
-                            alert("Error while creating Tenant");
+                            
                         });
 
                     //login is sucessfull or not
@@ -223,10 +254,16 @@
                         params: { password: passwordrandom, "user_name": $scope.signUp.Email}
                     })
                         .success(function (data) {
-                            alert("Please check your email to verify");
+                            var alertPopup = $ionicPopup.alert({
+                                title: 'Error!',
+                                template: "Please check your email to verify"
+                            });
                         })
                         .error(function () {
-                            alert("Please try again later..!!");
+                            var alertPopup = $ionicPopup.alert({
+                                title: 'Error!',
+                                template: "Please try again later..!!"
+                            });
                         });
                     $state.go("login");
 
@@ -237,8 +274,8 @@
                 }
             }
         }])
-        .controller('Personnel', ['$scope', '$state', '$http', function ($scope, $state, $http) {
-            alert("Rakhee personnel");
+        .controller('Personnel', ['$scope','$ionicPopup', '$state', '$http', function ($scope,$ionicPopup, $state, $http) {
+            
             $scope.Personnel = {
                 Absent: undefined,
                 Present: undefined,
@@ -255,12 +292,25 @@
                 }
                 $http.post('http://localhost:53771/api/Personnel/SavePersonnel', parameters)
                         .success(function (data) {
-                            alert("sucess" + data);
+                            var alertPopup = $ionicPopup.alert({
+                                title: 'Sucess!',
+                                template: "You attendence has been saved!"
+                            });
+
                         })
                         .error(function () {
-                            alert("Please try again later");
+                           
                         });
-                alert("submit button cliecked");
+                //rks
+                window.navigator.geolocation.getCurrentPosition(show_map);
+                function show_map(position) {
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+                    // Add code to show a map here
+                }
+
+                //rks
+                
                 $state.go("menuList");
             };
         }])
